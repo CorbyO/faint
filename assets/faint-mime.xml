@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+  <mime-type type="application/x-faint">
+    <comment>Faint project</comment>
+    <comment xml:lang="ko">Faint 프로젝트</comment>
+    <!-- Projects contain ZIP data, but the extension identifies the editor. -->
+    <sub-class-of type="application/zip"/>
+    <glob pattern="*.faint" weight="80"/>
+    <icon name="io.github.faint"/>
+  </mime-type>
+</mime-info>

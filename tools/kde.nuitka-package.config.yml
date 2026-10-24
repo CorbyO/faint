@@ -1,0 +1,21 @@
+# Fedora keeps Qt/Shiboken outside site-packages. Declare these explicitly;
+# otherwise Nuitka may treat them as host libraries and omit them.
+- module-name: 'PySide6'
+  dlls:
+    - by_code:
+        setup_code: |
+          import glob, os, re, subprocess
+          from PySide6 import QtCore, QtGui, QtWidgets
+          root = QtCore.QLibraryInfo.path(QtCore.QLibraryInfo.LibraryPath.PluginsPath)
+          candidates = [QtCore.__file__, QtGui.__file__, QtWidgets.__file__]
+          for category in ('styles', 'platformthemes'):
+              candidates.extend(glob.glob(os.path.join(root, category, '*.so')))
+          libraries = set()
+          for candidate in candidates:
+              output = subprocess.check_output(['ldd', candidate], text=True)
+              for path in re.findall(r'=> (/\S+) \(', output):
+                  if os.path.basename(path).startswith(('libQt6', 'libKF6', 'libpyside6', 'libshiboken6')):
+                      libraries.add(path)
+        filename_code: 'sorted(libraries)'
+      dest_path: '.'
+      when: 'linux'

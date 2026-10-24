@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="278.4" viewBox="59 28 160 174" fill="none">
+  <title>Faint</title>
+  <desc>A bold diagonal paintbrush with an electric turquoise, blue and violet head. Transparent background.</desc>
+  <defs>
+    <linearGradient id="color" x1="74" y1="52" x2="181" y2="113" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00E4D5"/>
+      <stop offset=".4" stop-color="#00BBFF"/>
+      <stop offset=".72" stop-color="#4660FF"/>
+      <stop offset="1" stop-color="#973BFF"/>
+    </linearGradient>
+    <linearGradient id="body" x1="86" y1="122" x2="151" y2="201" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#D6E5FA"/>
+    </linearGradient>
+  </defs>
+  <!-- A single diagonal silhouette carries the motion, without a separate tail. -->
+  <g transform="rotate(42 128 128)">
+    <!-- The pale handle has a restrained blue edge for light desktop surfaces. -->
+    <path d="M72 112H184V132C184 142 178 148 168 148H151C143 148 140 153 141 162L144 199C145 211 138 219 128 219C118 219 111 211 112 199L115 162C116 153 113 148 105 148H88C78 148 72 142 72 132V112Z" fill="url(#body)" stroke="#3A567B" stroke-width="2"/>
+    <circle cx="128" cy="201" r="5" fill="#3A567B"/>
+    <!-- Generous rounded bristles and one uninterrupted gradient remain readable
+         at small sizes. The stagger is the paint edge, not decorative striping. -->
+    <path d="M72 113V54C72 44 78 38 88 38C98 38 105 42 110 46C116 40 122 38 130 38C140 38 146 43 151 48C157 43 163 43 169 45C179 48 184 55 184 66V113H72Z" fill="url(#color)"/>
+    <!-- A clean inset ferrule separates the color from the white shoulder. -->
+    <path d="M73 113H183V126H73V113Z" fill="#21456B"/>
+    <path d="M73 113H183V116H73V113Z" fill="#FFFFFF" fill-opacity=".45"/>
+  </g>
+</svg>

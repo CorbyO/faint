@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "faint-paint"
+version = "0.1.0"
+description = "A lightweight layered paint app for KDE"
+requires-python = ">=3.10"
+dependencies = ["PySide6>=6.6", "Pillow>=10.1"]
+
+[project.scripts]
+faint = "faint.app:main"
+
+[tool.setuptools.packages.find]
+include = ["faint*"]
+
+[project.optional-dependencies]
+dev = ["ruff"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
+
+[tool.setuptools.data-files]
+"share/faint" = ["assets/faint.svg"]
